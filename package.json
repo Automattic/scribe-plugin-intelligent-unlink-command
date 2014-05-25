@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "main": "src/scribe-plugin-intelligent-unlink-command.js",
   "dependencies": {
-    "scribe-common": "~0.0.3"
+    "scribe-common": "git+ssh://git@github.com:Automattic/scribe-common.git"
   },
   "devDependencies": {
     "plumber": "~0.3.0",
