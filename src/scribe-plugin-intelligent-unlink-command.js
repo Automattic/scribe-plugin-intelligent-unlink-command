@@ -25,9 +25,17 @@ define(['scribe-common/src/element'], function (element) {
             });
 
             if (aNode) {
+              // we must save and then restore the selection because unwrapping
+              // the anchor loses the current selection
+              selection.placeMarkers();
+
+              // unwrap the A element's children, then remove it
               element.unwrap(aNode.parentNode, aNode);
+
+              // finally restore selection to the initial position
+              selection.selectMarkers();
             }
-          }.bind(this));
+          });
         } else {
           scribe.api.Command.prototype.execute.apply(this, arguments);
         }
